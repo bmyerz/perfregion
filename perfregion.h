@@ -15,7 +15,7 @@ class PerfRegion {
   public:  
   int start() {
     std::ostringstream os;
-    os << "perf stat -p " << getpid() << " python justread.py";
+    os << "perf stat -p " << getpid() << " perfregion.py";
     this->pipe = popen(os.str().c_str(), "w");
     if (!this->pipe) return 0;
     return 1;
